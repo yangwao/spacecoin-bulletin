@@ -4,7 +4,7 @@
     <section class="spacecoin-cta" style="background-color: var(--primary-color);">
         <div class="spacecoin-cta-content">
             {{> "spacecoin-logo"}}
-            <h1 class="spacecoin-tagline">Decentralized Satellite Computing</h1>
+            <h1 class="spacecoin-tagline" style="color: var(--secondary-color);">Decentralized Satellite Computing</h1>
             {{> "email-subscribe-form"}}
         </div>
     </section>
@@ -18,3 +18,41 @@
         {{/foreach}}
     </section>
 </main>
+
+<style>
+.spacecoin-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.spacecoin-cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--secondary-color);
+    opacity: 0.8;
+}
+
+.spacecoin-tagline {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.spacecoin-content {
+    position: relative;
+}
+
+.spacecoin-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--secondary-color);
+    opacity: 0.8;
+}
+</style>

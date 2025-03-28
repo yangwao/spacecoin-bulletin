@@ -1,32 +1,99 @@
 {{!< default}}
 
-{{#post}}
-    <main id="gh-main" class="gh-main">
-        <article class="gh-article {{post_class}}">
-            {{#if @page.show_title_and_feature_image}}
-                <header class="gh-article-header gh-canvas{{#match @custom.feature_image_width "Full"}} image-full{{else match @custom.feature_image_width "=" "Wide"}} image-wide{{/match}}">
-                    <h1 class="gh-article-title">{{@page.title}}</h1>
-                    {{#if @page.custom_excerpt}}
-                        <p class="gh-article-excerpt">{{@page.custom_excerpt}}</p>
-                    {{/if}}
-                    {{#if @page.feature_image}}
-                        <figure class="gh-article-image">
-                            <img 
-                                src="{{@page.feature_image}}" 
-                                alt="{{@page.title}}"
-                                class="kg-image"
-                            />
-                            {{#if @page.feature_image_caption}}
-                                <figcaption>{{@page.feature_image_caption}}</figcaption>
-                            {{/if}}
-                        </figure>
-                    {{/if}}
-                </header>
+<main id="gh-main" class="gh-main">
+    <article class="gh-article">
+        <header class="gh-article-header gh-canvas{{#match @custom.feature_image_width "Full"}} image-full{{else match @custom.feature_image_width "=" "Wide"}} image-wide{{/match}}">
+            <h1 class="gh-article-title">{{title}}</h1>
+            {{#if custom_excerpt}}
+                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
             {{/if}}
+            {{#if feature_image}}
+                <figure class="gh-article-image">
+                    <img 
+                        src="{{feature_image}}" 
+                        alt="{{title}}"
+                        class="kg-image"
+                    />
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+        </header>
 
-            <div class="gh-content gh-canvas">
-                {{@page.html}}
+        <div class="gh-content gh-canvas">
+            {{content}}
+        </div>
+
+        {{#if tags}}
+            <div class="gh-article-tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" class="gh-article-tag">{{name}}</a>
+                {{/foreach}}
             </div>
-        </article>
-    </main>
-{{/post}}
+        {{/if}}
+
+        {{#if comments}}
+            <div class="gh-comments">
+                {{comments}}
+            </div>
+        {{/if}}
+    </article>
+</main>
+
+<style>
+.gh-article-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.gh-article-title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.gh-article-excerpt {
+    color: var(--light-text);
+    opacity: 0.8;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.gh-article-image {
+    margin: 2rem 0;
+}
+
+.gh-article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gh-article-image figcaption {
+    color: var(--light-text);
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.gh-article-tags {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.gh-article-tag {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.gh-article-tag:hover {
+    background: var(--secondary-color);
+    color: var(--dark-bg);
+}
+</style>
