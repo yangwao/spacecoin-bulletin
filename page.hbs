@@ -38,6 +38,26 @@
                 {{comments}}
             </div>
         {{/if}}
+
+        {{#if @page}}
+            <div class="gh-page-features">
+                {{#if @page.show_title_and_feature_image}}
+                    <h2 class="gh-page-title">{{@page.title}}</h2>
+                    {{#if @page.feature_image}}
+                        <figure class="gh-page-image">
+                            <img 
+                                src="{{@page.feature_image}}" 
+                                alt="{{@page.title}}"
+                                class="kg-image"
+                            />
+                            {{#if @page.feature_image_caption}}
+                                <figcaption>{{@page.feature_image_caption}}</figcaption>
+                            {{/if}}
+                        </figure>
+                    {{/if}}
+                {{/if}}
+            </div>
+        {{/if}}
     </article>
 </main>
 
@@ -95,5 +115,32 @@
 .gh-article-tag:hover {
     background: var(--secondary-color);
     color: var(--dark-bg);
+}
+
+.gh-page-features {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.gh-page-title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.gh-page-image {
+    margin: 2rem 0;
+}
+
+.gh-page-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gh-page-image figcaption {
+    color: var(--light-text);
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 </style>
