@@ -1,25 +1,20 @@
 {{!< default}}
 
-<main id="gh-main" class="gh-main gh-canvas">
-    <section class="gh-pagehead">
-        <header class="gh-pagehead-content">
-            <h1 class="gh-pagehead-title">Archive</h1>
-
-            <div class="gh-pagehead-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural pagination.total empty="0 issues" singular="% issue" plural="% issues"}}
-                {{/if}}
-            </div>
-        </header>
+<main class="spacecoin-main">
+    <section class="spacecoin-cta" style="background-color: var(--primary-color);">
+        <div class="spacecoin-cta-content">
+            {{> "spacecoin-logo"}}
+            <h1 class="spacecoin-tagline">Decentralized Satellite Computing</h1>
+            {{> "email-subscribe-form"}}
+        </div>
     </section>
 
-    <div class="gh-feed">
-        {{#get "posts" limit="all"}}
-            {{#foreach posts}}
-                {{> loop}}
-            {{/foreach}}
-        {{/get}}
-    </div>
+    <section class="spacecoin-content" style="background-color: var(--dark-bg);">
+        {{#foreach posts}}
+            {{> "post-card" 
+                accent_color="var(--secondary-color)" 
+                text_color="var(--light-text)"
+            }}
+        {{/foreach}}
+    </section>
 </main>

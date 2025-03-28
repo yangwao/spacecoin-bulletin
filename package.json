@@ -1,6 +1,6 @@
 {
-    "name": "bulletin",
-    "description": "A Ghost theme",
+    "name": "spacecoin-theme-bulletin",
+    "description": "A Ghost theme adjusted theme",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -56,6 +56,11 @@
                 "type": "select",
                 "options": ["Full", "Wide", "Small"],
                 "default": "Small",
+                "group": "post"
+            },
+            "show_title_and_feature_image": {
+                "type": "boolean",
+                "default": true,
                 "group": "post"
             }
         }

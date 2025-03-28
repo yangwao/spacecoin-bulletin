@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #8B4513;
+  /* Spacecoin brown */
+  --secondary-color: #FFD700;
+  /* Spacecoin yellow */
+  --dark-bg: #000000;
+  /* Spacecoin black */
+  --light-text: #FFFFFF;
+  /* Spacecoin white */
+
+  /* Original Bulletin variables with Spacecoin palette */
+  --brand-color: var(--primary-color);
+  --accent-color: var(--secondary-color);
+  --background-color: var(--dark-bg);
+  --color-body-text: var(--light-text);
+}

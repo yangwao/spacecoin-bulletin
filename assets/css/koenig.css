@@ -1,0 +1,22 @@
+/* Wide images */
+.kg-width-wide {
+  width: 85vw;
+  margin: 2rem calc(50% - 50vw);
+  transform: translateX(calc(50vw - 50%));
+}
+
+/* Full-width images */
+.kg-width-full {
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin: 2rem -50vw;
+  transform: translateX(calc(50vw - 50%));
+}
+
+/* Spacecoin image captions */
+.kg-image-card figcaption {
+  color: var(--secondary-color);
+  font-size: 0.9em;
+  text-align: center;
+}

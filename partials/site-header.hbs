@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="site-header-content">
+    <a href="{{@site.url}}" class="site-logo">
+      <img src="{{asset " images/spacecoin-wordmark-white.svg"}}" alt="{{@site.title}}" class="logo-image" />
+    </a>
+
+    {{#if @site.members_enabled}}
+    {{#unless @member}}
+    <button class="button-subscribe" data-portal="signup">Join Space Network</button>
+    {{else}}
+    <button class="button-account" data-portal="account">Account</button>
+    {{/unless}}
+    {{/if}}
+  </div>
+</header>
