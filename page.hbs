@@ -3,21 +3,21 @@
 {{#post}}
     <main id="gh-main" class="gh-main">
         <article class="gh-article {{post_class}}">
-            {{#if @custom.show_title_and_feature_image}}
+            {{#if @page.show_title_and_feature_image}}
                 <header class="gh-article-header gh-canvas{{#match @custom.feature_image_width "Full"}} image-full{{else match @custom.feature_image_width "=" "Wide"}} image-wide{{/match}}">
-                    <h1 class="gh-article-title">{{title}}</h1>
-                    {{#if custom_excerpt}}
-                        <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+                    <h1 class="gh-article-title">{{@page.title}}</h1>
+                    {{#if @page.custom_excerpt}}
+                        <p class="gh-article-excerpt">{{@page.custom_excerpt}}</p>
                     {{/if}}
-                    {{#if feature_image}}
+                    {{#if @page.feature_image}}
                         <figure class="gh-article-image">
                             <img 
-                                src="{{feature_image}}" 
-                                alt="{{title}}"
+                                src="{{@page.feature_image}}" 
+                                alt="{{@page.title}}"
                                 class="kg-image"
                             />
-                            {{#if feature_image_caption}}
-                                <figcaption>{{feature_image_caption}}</figcaption>
+                            {{#if @page.feature_image_caption}}
+                                <figcaption>{{@page.feature_image_caption}}</figcaption>
                             {{/if}}
                         </figure>
                     {{/if}}
@@ -25,7 +25,7 @@
             {{/if}}
 
             <div class="gh-content gh-canvas">
-                {{content}}
+                {{@page.html}}
             </div>
         </article>
     </main>
