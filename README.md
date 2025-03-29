@@ -9,6 +9,13 @@ Bulletin is a minimal newsletter theme for [Ghost](https://github.com/TryGhost/G
 1. [Download this theme](https://github.com/TryGhost/Bulletin/archive/main.zip)
 2. Log into Ghost, and go to the `Design` settings area to upload the zip file
 
+
+# Local Dev
+- install ghost-cli `npm install ghost-cli -g`
+- install local ghost instance - `ghost install local`
+- symlink your theme folder to ghost installation `ln -s /path/to/theme /ghost/content/themes/theme-name`
+- validate theme `npm install -g gscan` & `gscan . --v5`
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
